@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card } from "react-bootstrap";
 
 class Project extends Component {
     constructor(props) {
@@ -72,10 +73,12 @@ class Project extends Component {
 
     render() {
         return (
-            <div className="Project">
-                <a className="projectLink" href={this.state.link}>{this.props.title}</a>
-                <div className="imageContainer" id={"c" + this.state.id}></div>
-            </div>
+            <Card>
+                <Card.Img className="imageContainer" id={"c" + this.state.id}></Card.Img>
+                <Card.Title className="projectLink">
+                    <a href={this.state.link}>{this.props.title}</a>
+                </Card.Title>
+            </Card>
         )
     }
 }

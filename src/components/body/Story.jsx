@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card } from 'react-bootstrap';
 
 class Story extends Component {
     constructor(props) {
@@ -55,11 +56,10 @@ class Story extends Component {
 
     render() {
         return (
-            <div className="Story">
-                <div className ="storyTitle">{this.props.title}</div>
-                <div className = "storyPreview">{this.props.description}</div>
-                <button className = "storyButton" onClick={this.openPdf}>Read</button>
-            </div>
+            <Card>
+                <Card.Title className ="storyTitle">{this.props.title}</Card.Title>
+                <Card.Text className = "storyPreview">{this.props.description}</Card.Text>
+            </Card>
         )
     }
 }

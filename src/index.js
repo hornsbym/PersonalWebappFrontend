@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Site from './components/Site';
-import "./style.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import "./style.css"
 
-ReactDOM.render(<Site />, document.getElementById('root'));
+ReactDOM.render(<Site/>, document.getElementById('root'));

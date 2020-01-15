@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, Row } from 'react-bootstrap';
 
 class Header extends Component {
     componentWillMount(){
@@ -34,14 +35,20 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="Header" id="header">
-                <div id="name">Mitchell Hornsby</div>
-                <img id="profile"></img>
-                <div id="bio">
-                        <div className="bioLine">Washington and Lee University Class of 2019</div>
-                        <div className="bioLine">Computer Science major/Creative Writing minor</div>
-                </div>
-            </div>
+            <Container>
+                <Row id="name">
+                    <h1>Mitchell Hornsby</h1>
+                </Row>
+                <Row>
+                    <img id="profile"></img>
+                </Row>
+                <Row>
+                    <Container>
+                        <p className="bioLine">Washington and Lee University Class of 2019</p>
+                        <p className="bioLine">Computer Science major/Creative Writing minor</p>
+                    </Container>    
+                </Row>
+            </Container>
         )
     }
 }

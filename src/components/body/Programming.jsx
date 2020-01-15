@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Project from "./Project"
-import content from "./content.json"
+import { Container, Row, Col } from 'react-bootstrap';
+import Project from "./Project";
+import content from "./content.json";
 
 class Programming extends Component{
     constructor(props){
@@ -39,10 +40,18 @@ class Programming extends Component{
 
     render(){
         return(
-            <div className="Programming" id = 'programming'>
-                <div style={{fontSize:"2rem",fontWeight:'bold'}}>Programming Projects</div>
-                <div>{this.state.projects}</div>
-            </div>
+            <Container>
+                <Row>
+                    <Col>
+                        <h2>Programming Projects</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Container>{this.state.projects}</Container>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }

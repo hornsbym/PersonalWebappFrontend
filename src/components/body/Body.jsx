@@ -1,23 +1,37 @@
 import React, { Component } from 'react';
-import HideButton from "../navbar/HideButton";
+import { Container, Row, Col } from "react-bootstrap";
 import Programming from "./Programming";
 import Writing from "./Writing";
 import Header from "./Header";
 import Contact from "./Contact";
 import EmailWidget from "./EmailWidget";
-import PDFViewer from "./PDFViewer"
 
 class Body extends Component {
     render(){
         return(
-            <div className="Body" id="Body">
-                <Header/>
-                <Programming/>
-                <PDFViewer/>
-                <Writing/>
-                <Contact/>
-                <EmailWidget/>
-            </div>
+            <Container>
+                <Row>
+                    <Col>
+                        <Header/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Programming/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Writing/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Contact/>
+                    </Col>
+                </Row>
+                {/*<EmailWidget/> */}
+            </Container>
         )
     }
 }

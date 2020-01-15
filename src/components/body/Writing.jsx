@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap'
 import Story from "./Story"
 import content from "./content.json"
 
@@ -34,10 +35,18 @@ class Writing extends Component {
 
     render() {
         return (
-             <div className="Writing" id="writing">
-                <div style={{fontSize:"2rem"}}>Writing Projects</div>
-                <div>{this.state.stories}</div>
-            </div>
+             <Container className="Writing" id="writing">
+                <Row>
+                    <Col>
+                        <h2>Writing Projects</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Container>{this.state.stories}</Container>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }

@@ -1,27 +1,23 @@
 import React, { Component } from 'react'
+import { Container, Row, Col } from "react-bootstrap"
 import Navbar from "./navbar/Navbar"
-import HideButton from "./navbar/HideButton"
 import Body from "./body/Body"
 
 class Site extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            users:[] 
-        }
-    }
-
     render(){
         return(
-            <div className="Site">
-                <div id="navbarContainer">
-                    <Navbar/>
-                </div>
-                <HideButton/>
-                <div id="bodyContainer">
-                    <Body/>
-                </div> 
-            </div>
+            <Container fluid="true">
+                <Row>
+                    <Col>
+                        <Navbar/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Body/>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }
