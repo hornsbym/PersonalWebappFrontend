@@ -74,10 +74,12 @@ class Project extends Component {
     render() {
         return (
             <Card>
-                <Card.Img className="imageContainer" id={"c" + this.state.id}></Card.Img>
-                <Card.Title className="projectLink">
-                    <a href={this.state.link}>{this.props.title}</a>
-                </Card.Title>
+                <Card.Img varient="top" id={"c" + this.state.id}></Card.Img>
+                <Card.Body>
+                    <Card.Title className="projectLink">
+                        <a href={this.state.link}>{this.props.title}</a>
+                    </Card.Title>
+                </Card.Body>
             </Card>
         )
     }
