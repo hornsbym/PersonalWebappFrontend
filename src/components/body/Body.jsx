@@ -9,7 +9,7 @@ import EmailWidget from "./EmailWidget";
 class Body extends Component {
     render(){
         return(
-            <Container>
+            <Container className="mt-5">
                 <Row>
                     <Col>
                         <Header/>

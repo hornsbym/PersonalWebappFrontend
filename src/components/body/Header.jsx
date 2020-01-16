@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Image } from 'react-bootstrap';
 
 class Header extends Component {
     componentWillMount(){
@@ -40,12 +40,15 @@ class Header extends Component {
                     <h1>Mitchell Hornsby</h1>
                 </Row>
                 <Row>
-                    <img id="profile"></img>
+                    <Image id="profile" roundedCircle></Image>
                 </Row>
                 <Row>
                     <Container>
-                        <p className="bioLine">Washington and Lee University Class of 2019</p>
-                        <p className="bioLine">Computer Science major/Creative Writing minor</p>
+                        <ul>
+                            <li>Software engineer at Publicis Sapient</li>
+                            <li>Washington and Lee University 2019</li>
+                            <li>Computer Science major/Creative Writing minor</li>
+                        </ul>
                     </Container>    
                 </Row>
             </Container>

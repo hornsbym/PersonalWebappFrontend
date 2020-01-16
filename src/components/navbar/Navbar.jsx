@@ -4,8 +4,8 @@ import { Navbar, Nav, NavbarBrand } from 'react-bootstrap'
 class Navigation extends Component {
     render() {
         return (
-            <Navbar>
-                <Navbar.Brand>Mitchell R. Hornsby</Navbar.Brand>
+            <Navbar expand="lg" fixed="top" bg="secondary">
+                <Navbar.Brand className="text-primary">MH</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>

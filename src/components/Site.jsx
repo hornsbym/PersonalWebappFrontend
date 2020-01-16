@@ -14,7 +14,7 @@ class Site extends Component{
                 </Row>
                 <Row>
                     <Col>
-                        <Body/>
+                        <Body />
                     </Col>
                 </Row>
             </Container>

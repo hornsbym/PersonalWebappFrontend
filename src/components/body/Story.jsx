@@ -41,7 +41,7 @@ class Story extends Component {
         this.setState({ pdf: datapdf })
     }
 
-    openPdf = () =>{
+    openPdf = () => {
         var viewer = document.getElementById("PDFViewer")
         viewer.src = this.state.pdf
         viewer.title = this.state.location
@@ -58,6 +58,7 @@ class Story extends Component {
         return (
             <Card>
                 <Card.Title className ="storyTitle">{this.props.title}</Card.Title>
+                
                 <Card.Text className = "storyPreview">{this.props.description}</Card.Text>
             </Card>
         )
