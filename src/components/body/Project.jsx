@@ -51,17 +51,7 @@ class Project extends Component {
         var b64encoded = btoa(String.fromCharCode.apply(null, this.state.buffers[i]));
         var datajpg = "data:image/jpg;base64," + b64encoded;
 
-        // var img = document.createElement("img")   // Creates an new image html element
-        // var id  = this.state.id+"-"+i.toString()
-        // img.setAttribute("class","projectImage") 
-        // img.setAttribute("id",this.state.id+"-"+i.toString())
-
-        // img.src = datajpg;                        // Puts the picture in the image element
-
         document.getElementById("c"+this.state.id).src = datajpg;
-        
-        // .appendChild(img) // Adds image element to document
-
     }
 
     resizePicture = (i) => {
@@ -76,7 +66,7 @@ class Project extends Component {
     render() {
         return (
             <Card border="primary">
-                <Card.Img varient="top" id={"c" + this.state.id}></Card.Img>
+                <Card.Img varient="top" id={"c" + this.state.id} fluid></Card.Img>
                 <Card.Body>
                     <Card.Title className="projectLink">
                         <a href={this.state.link}>{this.props.title}</a>

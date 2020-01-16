@@ -40,7 +40,7 @@ class Header extends Component {
                     <h1>Mitchell Hornsby</h1>
                 </Row>
                 <Row>
-                    <Image id="profile" roundedCircle></Image>
+                    <Image id="profile" roundedCircle fluid></Image>
                 </Row>
                 <Row>
                     <Container>
