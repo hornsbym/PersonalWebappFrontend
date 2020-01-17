@@ -36,20 +36,18 @@ class Header extends Component {
     render() {
         return (
             <Container>
-                <Row id="name">
+                <Row id="name"  className="justify-content-center">
                     <h1>Mitchell Hornsby</h1>
                 </Row>
-                <Row>
+                <Row className="justify-content-center">
                     <Image id="profile" roundedCircle fluid></Image>
                 </Row>
-                <Row>
-                    <Container>
-                        <ul>
-                            <li>Software engineer at Publicis Sapient</li>
-                            <li>Washington and Lee University 2019</li>
-                            <li>Computer Science major/Creative Writing minor</li>
-                        </ul>
-                    </Container>    
+                <Row className="justify-content-center">
+                    <ul>
+                        <li>Software engineer at Publicis Sapient</li>
+                        <li>Washington and Lee University 2019</li>
+                        <li>Computer Science major/Creative Writing minor</li>
+                    </ul>  
                 </Row>
             </Container>
         )

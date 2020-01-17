@@ -58,7 +58,6 @@ class Story extends Component {
         return (
             <Card>
                 <Card.Title className ="storyTitle">{this.props.title}</Card.Title>
-                
                 <Card.Text className = "storyPreview">{this.props.description}</Card.Text>
             </Card>
         )

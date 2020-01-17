@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, CardDeck } from 'react-bootstrap'
 import Story from "./Story"
 import content from "./content.json"
 
@@ -43,7 +43,11 @@ class Writing extends Component {
                 </Row>
                 <Row>
                     <Col>
-                        <Container>{this.state.stories}</Container>
+                        <Container>
+                            <CardDeck>
+                                {this.state.stories}  
+                            </CardDeck>
+                        </Container>
                     </Col>
                 </Row>
             </Container>

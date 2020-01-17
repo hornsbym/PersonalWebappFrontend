@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, CardDeck, Card } from 'react-bootstrap';
 import Project from "./Project";
 import content from "./content.json";
 
@@ -48,7 +48,11 @@ class Programming extends Component{
                 </Row>
                 <Row>
                     <Col>
-                        <Container>{this.state.projects}</Container>
+                        <Container>
+                            <CardDeck>
+                               {this.state.projects} 
+                            </CardDeck>
+                        </Container>
                     </Col>
                 </Row>
             </Container>
