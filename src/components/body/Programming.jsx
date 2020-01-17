@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, CardDeck, Card } from 'react-bootstrap';
+import { Container, Row, Col, CardColumns, CardDeck } from 'react-bootstrap';
 import Project from "./Project";
 import content from "./content.json";
 
@@ -49,9 +49,9 @@ class Programming extends Component{
                 <Row>
                     <Col>
                         <Container>
-                            <CardDeck>
+                            <CardColumns>
                                {this.state.projects} 
-                            </CardDeck>
+                            </CardColumns>
                         </Container>
                     </Col>
                 </Row>

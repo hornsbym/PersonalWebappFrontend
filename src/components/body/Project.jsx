@@ -54,14 +54,14 @@ class Project extends Component {
         document.getElementById("c"+this.state.id).src = datajpg;
     }
 
-    resizePicture = (i) => {
-        var picture = document.getElementById(this.state.id+"-"+i.toString())
-        var imageWidth = picture.clientWidth
-        var screenWidth = window.screen.availWidth
-        if (imageWidth > screenWidth * .6) {
-            picture.setAttribute("width", "60%")
-        }
-    }
+    // resizePicture = (i) => {
+    //     var picture = document.getElementById(this.state.id+"-"+i.toString())
+    //     var imageWidth = picture.clientWidth
+    //     var screenWidth = window.screen.availWidth
+    //     if (imageWidth > screenWidth * .6) {
+    //         picture.setAttribute("width", "60%")
+    //     }
+    // }
 
     render() {
         return (
