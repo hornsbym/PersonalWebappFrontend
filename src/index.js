@@ -1,6 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Site from './components/Site';
-import './custom.scss'
 
-ReactDOM.render(<Site/>, document.getElementById('root'));
+import { BrowserRouter } from 'react-router-dom';
+import Main from './main.jsx';
+import Container from 'react-bootstrap/Container';
+
+ReactDOM.render(
+    <Container fluid>
+        <BrowserRouter>
+            <Main/>
+        </BrowserRouter>
+    </Container>,
+    document.getElementById('root')
+);
