@@ -25,7 +25,7 @@ class MainPage extends Component {
         for(let gameName of this.props.gameNames) {
             await fetch(`${AWS_CONSTANTS.pathToBucket}/${gameName}/gameInformation.json`)
                 .then(gameInformation => {
-                    return gameInformation.json()
+                    return gameInformation.json() 
                 })
                 .then(jsonGameInformation => {
                     var gameLink = <Link className="gameLink" to={"/" + gameName}>Play {jsonGameInformation.gameName}</Link>
