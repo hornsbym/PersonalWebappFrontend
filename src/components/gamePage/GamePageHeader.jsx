@@ -3,7 +3,6 @@ import "../../styles.scss"
 import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Container from 'react-bootstrap/Container';
 
 class GamePageHeader extends Component {
     render() {
@@ -16,7 +15,7 @@ class GamePageHeader extends Component {
                     <Col/>
                     <Col/>
                     <Col md="auto">
-                        <h3>Loooooong Title</h3>
+                        <h3>{this.props.gameDisplayName}</h3>
                     </Col>
                     <Col/>
                     <Col/>

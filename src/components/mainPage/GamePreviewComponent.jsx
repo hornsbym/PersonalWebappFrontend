@@ -18,30 +18,21 @@ class GamePreviewComponent extends Component {
 
     componentDidMount() {
         this.getPhotos()
-        this.getTitleAndDescription()
+        this.createTitleAndParagraphs()
     }
 
-    async getTitleAndDescription() {
-        await fetch(`${AWS_CONSTANTS.pathToBucket}/${this.props.gameName}/gameInformation.json`)
-            .then(gameInformation => {
-                return gameInformation.json()
-            })
-            .then(jsonGameInformation => {
-                console.log("********** Game information: ")
-                console.log(jsonGameInformation)
+    createTitleAndParagraphs = () => {
+        let descriptionParagraphs = [];
+        for (let paragraph of this.props.gameDescriptionArray) {
+            descriptionParagraphs.push(
+                <p className="gamePreviewParagraph">{paragraph}</p>
+            )
+        }
 
-                let descriptionParagraphs = [];
-                for (let paragraph of jsonGameInformation.gameDescriptionParagraphs) {
-                    descriptionParagraphs.push(
-                        <p className="gamePreviewParagraph">{paragraph}</p>
-                    )
-                }
-
-                this.setState({
-                    titleComponent: <h3>{jsonGameInformation.gameName}</h3>,
-                    descriptionComponents: descriptionParagraphs
-                })
-            })
+        this.setState({
+            titleComponent: <h3>{this.props.gameDisplayName}</h3>,
+            descriptionComponents: descriptionParagraphs
+        })
     }
 
     async getPhotos () {

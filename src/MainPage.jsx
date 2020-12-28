@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import IntroSection from './components/mainPage/IntroSection';
 import GamePreviewRightComponent from './components/mainPage/GamePreviewComponent';
 import GamePreviewSection from './components/mainPage/GamePreviewSection';
+import AWS_CONSTANTS from './aws_constants';
 
 class MainPage extends Component {
     constructor(props) {
@@ -19,23 +20,29 @@ class MainPage extends Component {
         this.createComponentsFromGameNames()
     }
 
-    createComponentsFromGameNames = () => {
-        var linkLIArray = []
-        var gamePreviewComponents = []
-
-        var gameName;
-
+    async createComponentsFromGameNames () {
         let isLeft = false
-        for(gameName of this.props.gameNames) {
-            var gameLink = <Link className="gameLink" to={"/" + gameName}>Play {gameName}</Link>
-            gamePreviewComponents.push(<GamePreviewRightComponent gameName={gameName} gameLink={gameLink} isLeft={isLeft}/>)
-            isLeft = !isLeft;
+        for(let gameName of this.props.gameNames) {
+            await fetch(`${AWS_CONSTANTS.pathToBucket}/${gameName}/gameInformation.json`)
+                .then(gameInformation => {
+                    return gameInformation.json()
+                })
+                .then(jsonGameInformation => {
+                    var gameLink = <Link className="gameLink" to={"/" + gameName}>Play {jsonGameInformation.gameName}</Link>
+                    var component = <GamePreviewRightComponent 
+                        gameName={gameName} 
+                        gameDisplayName={jsonGameInformation.gameName} 
+                        gameDescriptionArray={jsonGameInformation.gameDescriptionParagraphs}
+                        gameLink={gameLink} 
+                        isLeft={isLeft} />
+                    
+                    this.setState(prevState => ({
+                        gamePreviewComponents: [...prevState.gamePreviewComponents, component]
+                    }))
+
+                    isLeft = !isLeft;
+            })
         }
-        
-        this.setState({
-            linkLIs: linkLIArray,
-            gamePreviewComponents: gamePreviewComponents
-        })
     }
 
     render() {
