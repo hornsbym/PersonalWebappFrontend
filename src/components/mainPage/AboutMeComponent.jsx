@@ -6,7 +6,7 @@ class AboutMeComponent extends Component {
         return(
             <div id="aboutMeComponent" className="d-flex justify-content-center">
                 <div> 
-                    <p>Mitchell Hornsby</p>
+                    <p>Mitchell Hornsby TESTING</p>
                     <p>Junior Software Engineer</p>
                     <p>W&amp;L University '19</p>
                     <p>Publicis Sapient</p>
