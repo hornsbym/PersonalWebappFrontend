@@ -8,7 +8,7 @@ class AboutMeComponent extends Component {
                 <div> 
                     <p>Mitchell Hornsby TESTING</p>
                     <p>Junior Software Engineer</p>
-                    <p>W&amp;L University '19</p>
+                    <p>W&amp;L University '19</p> 
                     <p>Publicis Sapient</p>
                 </div>
             </div>
