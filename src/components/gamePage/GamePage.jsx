@@ -14,7 +14,7 @@ class GamePage extends Component {
     }
 
     componentDidMount () {
-        this.getGameDetails()
+        this.getGameDetails() 
     }
 
     getGameDetails() {

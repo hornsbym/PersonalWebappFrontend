@@ -6,5 +6,5 @@ const AWS_CONSTANTS = {
     addNewGameUrl: "http://localhost:3000/addNewGame",
     verifyUserUrl: "http://localhost:3000/verifyUser"
 }
-
+ 
 export default AWS_CONSTANTS;
