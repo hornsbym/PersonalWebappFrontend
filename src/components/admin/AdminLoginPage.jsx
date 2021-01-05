@@ -81,12 +81,6 @@ class AdminLoginPage extends Component {
                     </Row>
                     <Row className="justify-content-md-center">
                         <Col md ="3">
-                            {/* <Link to={{
-                                pathname:"/admin",
-                                state: {
-                                    authenticated: true
-                                }
-                            }}>Login</Link> */}
                             <button onClick={this.verifyUser.bind(this)}>Login</button>
                         </Col>
                     </Row>
