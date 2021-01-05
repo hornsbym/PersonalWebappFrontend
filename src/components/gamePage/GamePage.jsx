@@ -31,7 +31,7 @@ class GamePage extends Component {
 
     render() {
         let content = new UnityContent(
-            this.state.pathToGameFolder + "/Build/" + this.props.gameName + "Builds.json",
+            this.state.pathToGameFolder + "/Build/" + this.props.gameName + ".json",
             this.state.pathToGameFolder + "/Build/UnityLoader.js"
         );
 
