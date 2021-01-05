@@ -11,6 +11,16 @@ $fontStyle: 1rem 'Open Sans', sans-serif;
     font-size: 1.5rem;
 }
 
+#adminHeader {
+    height: 4rem;
+    padding-top:.75rem;
+}
+
+.adminLink {
+    color: $white;
+    text-decoration: underline;
+}
+
 body {
     background-color: $grey;
     font: $fontStyle;
@@ -23,6 +33,10 @@ body {
 
 .container-fluid {
     padding: 0rem;
+}
+
+#gameEditForm {
+    padding-top: 1rem;
 }
 
 .gameLink {
@@ -90,6 +104,10 @@ body {
 #interestsComponent {
     margin-top: 1.25rem;
     font-size: 1.25rem;
+}
+
+#loginContainer {
+    margin-top: 1rem;
 }
 
 #profilePic {

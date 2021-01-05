@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import "../styles.scss"
+import React, { Component } from 'react'
+import '../../styles.scss'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-class Header extends Component {
+class AdminHeader extends Component {
     render() {
         return(
-            <div className="header">
+            <div id="adminHeader" className="header">
                 <Row className="justify-content-center">
                     <Col xl="3">
-                        <h2>{this.props.title}</h2>
+                        <h2 className="text-center">{this.props.title}</h2>
                     </Col>
                 </Row>
             </div>
@@ -17,4 +17,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default AdminHeader

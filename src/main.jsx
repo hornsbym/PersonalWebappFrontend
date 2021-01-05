@@ -3,6 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import MainPage from './MainPage.jsx';
 import GamePage from './components/gamePage/GamePage.jsx';
 import AWS_CONSTANTS from './aws_constants'
+import AdminLoginPage from './components/admin/AdminLoginPage.jsx';
+import AdminConsole from './components/admin/AdminConsole.jsx'
+import EditGamePage from './components/admin/EditGamePage.jsx';
+import SelectGameToEditPage from './components/admin/SelectGameToEditPage.jsx'
 
 class Main extends Component {
     constructor(props) {
@@ -27,7 +31,7 @@ class Main extends Component {
             var gamePages = []
             for (let gameName of gameNames) {
                 gamePages.push(
-                    <Route path={"/" + gameName} render={(props) => (<GamePage {...props} gameName={gameName}/>)}/>
+                    <Route exact path={"/" + gameName} render={(props) => (<GamePage {...props} gameName={gameName}/>)}/>
                 )
             }
 
@@ -50,6 +54,10 @@ class Main extends Component {
                 <Switch>
                     {this.state.rootRoute}
                     {this.state.gamePageRoutes}
+                    <Route exact path="/admin/login" component={AdminLoginPage}></Route>
+                    <Route exact path="/admin/newGame" component={EditGamePage}></Route>
+                    <Route exact path="/admin/editGame" component={SelectGameToEditPage}></Route>
+                    <Route exact path="/admin" component={AdminConsole}></Route>
                 </Switch>
             </main>
         )

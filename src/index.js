@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { BrowserRouter } from 'react-router-dom';
-import Main from './main.jsx';
+import Main from './Main.jsx';
 import Container from 'react-bootstrap/Container';
 
 ReactDOM.render(

@@ -8,7 +8,7 @@ class GamePageHeader extends Component {
     render() {
         return(
             <div className="gamePageHeader">
-                <Row justify-content-md-center>
+                <Row className="justify-content-md-center">
                     <Col>
                         <Link id="homeLink" to="/">Home</Link>
                     </Col>
