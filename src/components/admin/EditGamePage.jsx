@@ -62,7 +62,12 @@ class EditGamePage extends Component {
                 </Container>
             )
         } else {
-            return (<Redirect to="/admin/login"></Redirect>)
+            return (<Redirect to={{
+                pathname: "/admin",
+                state: {
+                    authenticated: true
+                }
+            }}></Redirect>)
         }
     }
 }
