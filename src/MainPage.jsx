@@ -32,7 +32,7 @@ class MainPage extends Component {
                     var component = <GamePreviewRightComponent 
                         gameName={gameName} 
                         gameDisplayName={jsonGameInformation.gameName} 
-                        gameDescriptionArray={jsonGameInformation.gameDescriptionParagraphs}
+                        gameDescription={jsonGameInformation.gameDescriptionParagraphs}
                         gameLink={gameLink} 
                         isLeft={isLeft} />
                     

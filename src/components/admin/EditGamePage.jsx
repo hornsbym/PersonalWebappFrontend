@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, useRef, useState } from 'react'
 import '../../styles.scss'
 import Container from 'react-bootstrap/Container'
 import AdminHeader from './AdminHeader'
 import Row from 'react-bootstrap/Row'
 import AWS_CONSTANTS from '../../aws_constants'
+import JoditEditor from "jodit-react";
 import { Redirect } from 'react-router'
 
 class EditGamePage extends Component {
@@ -11,13 +12,17 @@ class EditGamePage extends Component {
         super(props)
 
         this.state = {
-            authenticated: (props.location.state === undefined) ? false : true
+            authenticated: (props.location.state === undefined) ? false : true,
         }
     }
 
     render() {
         let header = (this.props.gameData == null) ? <AdminHeader title="Create new game" ></AdminHeader> : <AdminHeader title="Edit game"></AdminHeader>
         
+        let editorConfig = {
+            theme: "dark"
+        }
+
         if (this.state.authenticated) {
             return (
                 <Container fluid>
@@ -41,18 +46,38 @@ class EditGamePage extends Component {
                                         </tr>
                                         <tr>
                                             <td><label htmlFor="gameDescriptions">Description:</label></td>
-                                            <td><textarea type="text" name="gameDescriptions" id="gameDescriptions" cols={50} rows={6} /></td>
+                                            <td>
+                                                <JoditEditor 
+                                                name="gameDescriptions" 
+                                                id="gameDescriptions"
+                                                config={editorConfig}>
+                                                </JoditEditor>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td><label htmlFor="gamePhotos">Photos:</label></td>
                                             <td><input type="file" name="gamePhotos" id="gamePhotos" multiple /></td>
                                         </tr>
                                         <tr>
+                                            <td><label htmlFor="githubLink">Github link:</label></td>
+                                            <td><input type="text" name="githubLink" id="githubLink"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label htmlFor="aboutThisGame">About this game:</label></td>
+                                            <td>
+                                                <JoditEditor 
+                                                name="gamePageDescription" 
+                                                id="gamePageDescription"
+                                                config={editorConfig}>
+                                                </JoditEditor>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td colSpan={2}>
                                                 <div style={{ textAlign: "center", marginTop: "1rem" }}>
                                                     <input type="submit" value="Submit" />
                                                 </div>
-                                            </td>
+                                            </td> 
                                         </tr>
                                     </tbody>
                                 </table>

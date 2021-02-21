@@ -59,6 +59,14 @@ body {
     background: $blue;
 }
 
+.gamePageDescriptionSection {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    font-size: 1.4rem;
+}
+
 .gamePreviewCol {
     padding: 0rem;
     display: flex;
@@ -126,7 +134,7 @@ body {
 }
 
 .unityPlayerContainer {
-    width: 75%;
+    width: 79%;
     margin-left: auto;
     margin-right: auto;
 }

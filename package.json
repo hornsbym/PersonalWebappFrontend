@@ -5,7 +5,9 @@
   "dependencies": {
     "audit": "0.0.6",
     "bootstrap": "^4.4.1",
+    "draft-js": "^0.11.7",
     "fix": "0.0.6",
+    "jodit-react": "^1.0.70",
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.6",
     "react": "^16.8.0",
@@ -15,7 +17,9 @@
     "react-router-dom": "^5.2.0",
     "react-script-tag": "^1.1.2",
     "react-scripts": "^3.3.0",
-    "react-unity-webgl": "^7.1.10"
+    "react-unity-webgl": "^7.1.10",
+    "rich-markdown-editor": "^11.3.1",
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

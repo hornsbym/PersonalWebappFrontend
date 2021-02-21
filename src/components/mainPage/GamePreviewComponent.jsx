@@ -22,16 +22,10 @@ class GamePreviewComponent extends Component {
     }
 
     createTitleAndParagraphs = () => {
-        let descriptionParagraphs = [];
-        for (let paragraph of this.props.gameDescriptionArray) {
-            descriptionParagraphs.push(
-                <p className="gamePreviewParagraph">{paragraph}</p>
-            )
-        }
 
         this.setState({
             titleComponent: <h3>{this.props.gameDisplayName}</h3>,
-            descriptionComponents: descriptionParagraphs
+            descriptionComponents: <div dangerouslySetInnerHTML={{ __html: this.props.gameDescription}}></div>
         })
     }
 

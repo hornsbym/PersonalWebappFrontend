@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
 import Unity, { UnityContent } from "react-unity-webgl";
 import AWS_CONSTANTS from "../../aws_constants";
 import GamePageHeader from './GamePageHeader';
@@ -10,6 +11,8 @@ class GamePage extends Component {
         this.state = {
             pathToGameFolder: AWS_CONSTANTS.pathToBucket + "/" + props.gameName,
             gameDisplayName: null,
+            gameGithubLink: null,
+            gameDescription: null,
         }
     }
 
@@ -23,8 +26,13 @@ class GamePage extends Component {
                 return gameInformation.json()
             })
             .then(jsonGameInformation => {
+                console.log(`${AWS_CONSTANTS.pathToBucket}/${this.props.gameName}/gameInformation.json`)
+                console.log(jsonGameInformation)
+
                 this.setState({
-                    gameDisplayName: jsonGameInformation.gameName
+                    gameDisplayName: jsonGameInformation.gameName,
+                    gameGithubLink: jsonGameInformation.githubLink,
+                    gameDescription: jsonGameInformation.gamePageDescription
                 })
             })
     }
@@ -38,9 +46,19 @@ class GamePage extends Component {
         return (
             <div>
                 <GamePageHeader gameDisplayName={this.state.gameDisplayName} />
-                <div className="unityPlayerContainer">
-                    <Unity unityContent={content} />
-                </div>
+                <section>
+                    <div className="unityPlayerContainer">
+                        <Unity unityContent={content} />
+                    </div>
+                </section>
+                <section className="blueBackground gamePageDescriptionSection">
+                        <Container>
+                            <div>
+                                <p><strong>Github: </strong><a href={this.state.gameGithubLink}>{this.state.gameGithubLink}</a></p>
+                            </div>
+                            <div dangerouslySetInnerHTML={{__html: this.state.gameDescription}}></div>
+                        </Container>
+                </section>
             </div>
         )
     }
