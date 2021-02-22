@@ -96,6 +96,14 @@ body {
     padding: 5rem;
 }
 
+.githubLink {
+    color: #888888;
+}
+
+.githubLink:hover {
+    color: white;
+}
+
 .header {
     background-color: $blue;
     width: 100%;

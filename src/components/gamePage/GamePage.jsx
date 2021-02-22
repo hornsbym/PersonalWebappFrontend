@@ -54,7 +54,7 @@ class GamePage extends Component {
                 <section className="blueBackground gamePageDescriptionSection">
                         <Container>
                             <div>
-                                <p><strong>Github: </strong><a href={this.state.gameGithubLink}>{this.state.gameGithubLink}</a></p>
+                                <p><strong>Github: </strong><a className="githubLink" href={this.state.gameGithubLink}>{this.state.gameGithubLink}</a></p>
                             </div>
                             <div dangerouslySetInnerHTML={{__html: this.state.gameDescription}}></div>
                         </Container>
